@@ -20,6 +20,7 @@ while counter < mine_num:
 
 print(Board)
 num = 0
+
 def Numbers ():
     while counter == 5 and mine_num == 5 and Board[row][col]=="X":
        num = Board[row+1][col+1]
@@ -40,8 +41,19 @@ def Player_move():
     Player_choice_colom = input("select a colom")
     int_Player_choice_row = int(Player_choice_row)
     int_Player_choice_colom = int(Player_choice_colom)
-
+    flag = input("pick B or S")
+    if Board[int_Player_choice_row][int_Player_choice_colom] == "_":
+          Board[int_Player_choice_row][int_Player_choice_colom] = (flag)
+    print("row 0", Board[0])
+    print("row 1", Board[1])
+    print("row 2", Board[2])
+    print("row 3", Board[3])
+    print("row 4", Board[4])
+Player_move()
+def cover_bomb():
+    while  Board[row][col]=="X":
+        Board[row][col]="_"
 #def gameplay():
-    Player_move()
+Player_move()
 #gameplay()
 
